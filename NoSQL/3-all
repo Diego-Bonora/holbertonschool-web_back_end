@@ -1,2 +1,2 @@
 // list all documents of a collection
-db.collection.find()
+db.school.find()
