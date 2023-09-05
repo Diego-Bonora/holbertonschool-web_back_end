@@ -1,6 +1,6 @@
 // insert a document into mongodb
-db.school.insertOne(
+db.school.insert(
     {
-        name:"Holberton school",
+        name: "Holberton school",
     }
 )
