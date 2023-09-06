@@ -1,2 +1,2 @@
 // delete all from a colection
-db.school.delete({})
+db.school.deleteMany({})
