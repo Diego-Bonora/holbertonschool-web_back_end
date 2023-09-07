@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+""" lists all the methods """
+from pymongo import MongoClient
+
+if __name__ == "__main__":
+    """ lists all the methods """
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    nginx_collection = client.logs.nginx
+    print("{} logs".format(nginx_collection.count_documents({})))
+    print("Methods:")
+    print("\t method Get: {}".format(
+        nginx_collection.count_documents({"method": "GET"})))
+    print("\t method POST: {}".format(
+        nginx_collection.count_documents({"method": "POST"})))
+    print("\t method PUT: {}".format(
+        nginx_collection.count_documents({"method": "PUT"})))
+    print("\t method PATCH: {}".format(
+        nginx_collection.count_documents({"method": "PATCH"})))
+    print("\t method DELETE: {}".format(
+        nginx_collection.count_documents({"method": "DELETE"})))
+    print("{} status check".format(
+        nginx_collection.count_documents({"path": "/status"})))
