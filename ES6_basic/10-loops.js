@@ -1,5 +1,5 @@
 export default function appendToEachArrayValue(array, appendString) {
-  for (idx in array) {
+  for (idx of array) {
     array[idx] = appendString + array[idx];
   }
 
