@@ -5,9 +5,10 @@ export default function updateStudentGradeByCity(getListStudents, city, newGrade
     for (const item in locationArray) {
       locationArray[item].grade = 'N/A';
     }
-    const newStudentGrades = locationArray.map((item) => newGrades.map((student) => {
+    locationArray.map((item) => newGrades.map((student) => {
       if (item.id === student.studentId) item.grade = student.grade;
+      return null;
     }));
-    return locationArray;
   }
+  return locationArray;
 }
